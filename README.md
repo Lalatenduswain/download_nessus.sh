@@ -1,13 +1,13 @@
 # Nessus Downloader
 
-This repository provides a simple bash script to download the Nessus package from Tenable.
+This repository provides a simple bash script to download the Nessus package from Tenable and start the Nessus service.
 
 ## Prerequisites
 
-Before using the script, make sure you have `curl` installed on your system. If not, you can install it by running:
+Before using the script, make sure you have `curl` and `dpkg` installed on your system. If not, you can install them by running:
 
 ```bash
-sudo apt install curl
+sudo apt install curl dpkg
 ```
 
 ## Usage
@@ -24,17 +24,28 @@ git clone https://github.com/your-username/nessus-downloader.git
 cd nessus-downloader
 ```
 
-3. Run the script to download the Nessus package:
+3. Run the script to download and start Nessus:
 
 ```bash
-./download_nessus.sh
+bash <(curl -sSL https://raw.githubusercontent.com/Lalatenduswain/download_nessus.sh/master/download_nessus.sh)
 ```
 
-4. The Nessus package will be downloaded and saved as `Nessus-10.5.3-ubuntu1404_amd64.deb` in the current directory.
+Or
+
+
+```bash
+curl -sSL https://raw.githubusercontent.com/Lalatenduswain/download_nessus.sh/master/download_nessus.sh | bash
+```
+
+This command will download the script directly from the provided URL and execute it using `bash`. Make sure you trust the source before running scripts in this manner.
+
+4. The script will download the Nessus package, install it using `dpkg`, and start the Nessus service.
+
+5. After the script completes, Nessus will be downloaded, installed, and started successfully.
 
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
 ```
 
-You can customize the `README.md` file further based on your specific requirements or add more sections as needed.
+You can copy this updated version of the `README.md` file and replace the existing one in your GitHub repository.

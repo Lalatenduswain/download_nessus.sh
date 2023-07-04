@@ -11,6 +11,7 @@ curl --request GET \
 sudo dpkg -i Nessus-10.5.3-ubuntu1404_amd64.deb
 
 # Start Nessus service
-sudo /etc/init.d/nessusd start
+sudo systemctl start nessusd
+#sudo /etc/init.d/nessusd start
 
 echo "Nessus has been downloaded and started successfully."
